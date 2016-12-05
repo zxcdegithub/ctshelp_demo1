@@ -1,0 +1,3 @@
+cts_root=$2
+cmd=$1
+gnome-terminal -x bash -c "cd ${cts_root}/android-cts/tools;java -cp tradefed-prebuilt.jar:hosttestlib.jar:cts-tradefed.jar -DCTS_ROOT=${cts_root} com.android.cts.tradefed.command.CtsConsole run cts --plan ${cmd} --skip-preconditions;exec bash"
